@@ -1,0 +1,29 @@
+Klient
+================
+
+Välkomnar och instruerar vid uppstart
+- Visar speltillstånd (Totalsaldo för hela kedjan, lokalt saldo, lagerhållning, omgångsdifferens, senaste leverans, senaste order)
+Informerar om att spelet har börjat och att man ska lägga in en order
+Informerar om en omgångs avslutande resultat och att nästa order kan läggas 
+- Tar emot order och ser till att det är en giltig order
+- Kan registrera sig med position i kedjan (namn? nummer?)
+
+Server
+================
+- Tar emot registreringar
+- Stänger efter fyra anmälda
+- Notifierar klienter om att spelet startat och att man kan lägga den första ordern
+- Avvisar ordrar som är dubletter eller som sker innan spelet startat
+Tar emot ordrar och stänger efter fyra lagda (en för varje led i kedjan)
+Räknar fram ett nytt speltillstånd och kommunicerar det till alla delar i kedjan.
+/ Håller koll på ordrar "utifrån" det vill säga den första länken i kedjan som innehåller ökningen i efterfråga.
+Sätter upp köerna mellan de olika delarna i kedjan.
+Sammanställer en historik när spelet är över (efter 52 veckor).
+
+Speltillstånd
+
+Hmm, tillstånd för hela spelet separerat från omgångens tillstånd? Inte skicka kö-informationen till klienten va?
+
+{:grand_total, } [{:role, [{:saldo, 0}, {:}
+
+ 
